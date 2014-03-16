@@ -16,6 +16,10 @@
 Batman.config.pathToHTML = '/assets/html'
 
 class BatmanJsBlog extends Batman.App
+
+  @resources 'posts', ->
+    @resources 'comments'
+
   # @resources 'products'
   # @resources 'discounts', except: ['edit']
   # @resources 'customers', only: ['new', 'show']
@@ -30,6 +34,6 @@ class BatmanJsBlog extends Batman.App
   # @route 'apps', 'apps#index'
   # @route 'apps/private', 'apps#private', as: 'privateApps'
 
-  @root 'main#index'
+  @root 'posts#index'
 
 (global ? window).BatmanJsBlog = BatmanJsBlog
